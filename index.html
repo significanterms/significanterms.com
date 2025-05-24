@@ -8,113 +8,250 @@
       name="description"
       content="Significant Terms provides advanced data intelligence solutions in machine learning, information retrieval, and data engineering."
     />
+    <!-- <link rel="icon" href="/favicon.svg" type="image/svg+xml"> -->
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <style>
-      body {
+      * {
         margin: 0;
-        font-family: "Roboto", sans-serif;
-        color: #333;
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-      }
-      header {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        background: linear-gradient(to right, #1e3a8a, #3b82f6);
-        color: white;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        z-index: 1000;
-      }
-      header .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 1rem 2rem;
-      }
-      header h1 {
-        font-family: "Montserrat", sans-serif;
-        font-size: 2.5rem;
-        font-weight: 700;
-        margin: 0;
-        letter-spacing: 1px;
-      }
-      main {
-        flex: 1;
-        margin-top: 80px;
-      }
-      .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 2rem;
-      }
-      section {
-        padding: 3rem 0;
-        border-radius: 0px;
-        margin-bottom: 2rem;
-      }
-      .intro {
-        background: linear-gradient(to bottom, #ffffff, #f1f5f9);
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-      }
-      .solutions {
-        background: linear-gradient(to bottom, #e2e8f0, #cbd5e1);
-      }
-      h2 {
-        font-size: 1.8rem;
-        color: #1e3a8a;
-        margin-bottom: 1rem;
-        font-weight: 500;
-      }
-      p,
-      li {
-        font-size: 1.1rem;
-        line-height: 1.6;
-        color: #4b5563;
-      }
-      ul {
-        list-style-type: none;
         padding: 0;
-        margin: 1rem 0;
+        box-sizing: border-box;
       }
-      li {
-        margin-bottom: 1rem;
-        padding-left: 1.5rem;
+
+      body {
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          sans-serif;
+        color: #1f2937;
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      /* Header */
+      header {
+        background: linear-gradient(
+          135deg,
+          #0f172a 0%,
+          #1e293b 50%,
+          #334155 100%
+        );
+        color: white;
+        padding: 6rem 0 8rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23ffffff" fill-opacity="0.03"><path d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/></g></g></svg>')
+          repeat;
+        opacity: 0.1;
+      }
+
+      .hero-content {
+        text-align: center;
+        position: relative;
+        z-index: 1;
+        animation: slideUp 0.8s ease-out;
+      }
+
+      h1 {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        background: linear-gradient(135deg, #ffffff, #e2e8f0);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        letter-spacing: -0.02em;
+      }
+
+      .tagline {
+        font-size: 1.25rem;
+        color: #cbd5e1;
+        font-weight: 400;
+        max-width: 600px;
+        margin: 0 auto;
+        opacity: 0.9;
+      }
+
+      /* Main Content */
+      main {
+        background: linear-gradient(to bottom, #ffffff, #f8fafc);
+        padding: 6rem 0;
+        position: relative;
+        margin-top: -3rem;
+        box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.1);
+      }
+
+      .intro {
+        text-align: center;
+        margin-bottom: 5rem;
+        animation: fadeIn 0.8s ease-out 0.3s both;
+      }
+
+      .intro h2 {
+        font-size: 2.25rem;
+        font-weight: 600;
+        color: #0f172a;
+        margin-bottom: 1.5rem;
         position: relative;
       }
-      li:before {
-        content: "•";
-        color: #3b82f6;
-        position: absolute;
-        left: 0;
+
+      .intro h2::after {
+        content: "";
+        display: block;
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(90deg, #3b82f6, #06b6d4);
+        margin: 1rem auto 0;
+        border-radius: 2px;
+      }
+
+      .intro p {
         font-size: 1.2rem;
+        color: #64748b;
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 1.7;
       }
-      strong {
-        color: #1e3a8a;
+
+      /* Solutions Layout */
+      .solutions-container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        margin-top: 4rem;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
       }
-      footer {
-        background: #1e3a8a;
+
+      .solution-card {
+        background: white;
+        padding: 2.5rem;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        border: 1px solid #e2e8f0;
+        transition: all 0.3s ease;
+        animation: fadeInUp 0.6s ease-out both;
+      }
+
+      .solution-card:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      .solution-card:nth-child(3) {
+        animation-delay: 0.4s;
+      }
+
+      .solution-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+        border-color: #3b82f6;
+      }
+
+      .solution-icon {
+        width: 48px;
+        height: 48px;
+        background: linear-gradient(135deg, #3b82f6, #06b6d4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.5rem;
         color: white;
-        padding: 1rem 0;
-        margin-top: auto;
+        font-size: 1.25rem;
+        font-weight: 600;
       }
-      footer .container {
+
+      .solution-card h3 {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: #0f172a;
+        margin-bottom: 1rem;
+      }
+
+      .solution-card p {
+        color: #64748b;
+        line-height: 1.6;
+      }
+
+      /* Footer */
+      footer {
+        background: #0f172a;
+        color: #94a3b8;
+        padding: 2rem 0;
         text-align: center;
-        font-size: 0.9rem;
+        border-top: 1px solid #1e293b;
       }
+
+      /* Animations */
+      @keyframes slideUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Responsive */
       @media (max-width: 768px) {
-        header h1 {
-          font-size: 2rem;
-        }
         .container {
-          padding: 1rem;
+          padding: 0 1.5rem;
         }
-        section {
-          padding: 2rem 0;
+
+        header {
+          padding: 4rem 0 6rem;
+        }
+
+        main {
+          padding: 4rem 0;
+          margin-top: -2rem;
+        }
+
+        .solutions-container {
+          gap: 1.5rem;
+        }
+
+        .solution-card {
+          padding: 2rem;
         }
       }
     </style>
@@ -123,54 +260,58 @@
     <!-- Header -->
     <header>
       <div class="container">
-        <h1>Significant Terms</h1>
+        <div class="hero-content">
+          <h1>Significant Terms</h1>
+          <p class="tagline">Advanced Data Intelligence Solutions</p>
+        </div>
       </div>
     </header>
 
     <!-- Main Content -->
     <main>
-      <!-- Introduction -->
-      <section class="intro">
-        <div class="container">
-          <h2>Data Intelligence Solutions</h2>
+      <div class="container">
+        <div class="intro">
+          <h2>Transforming Data Into Intelligence</h2>
           <p>
-            Significant Terms is a consultancy focused on delivering advanced
-            data intelligence solutions. We specialize in harnessing machine
-            learning, information retrieval, and data engineering to transform
-            complex data into actionable insights for organizations.
+            We specialize in harnessing machine learning, information retrieval,
+            and data engineering to transform complex data into actionable
+            insights for organizations seeking competitive advantage.
           </p>
         </div>
-      </section>
 
-      <!-- Solutions -->
-      <section class="solutions">
-        <div class="container">
-          <h2>Our Solutions</h2>
-          <ul>
-            <li>
-              <strong>Machine Learning</strong>: We develop sophisticated
-              predictive models and intelligent systems tailored to specific
-              business needs. Our solutions enable accurate forecasting, anomaly
-              detection, and automated decision-making, leveraging cutting-edge
-              algorithms and robust computational frameworks.
-            </li>
-            <li>
-              <strong>Information Retrieval</strong>: We design high-performance
-              search and recommendation systems that deliver relevant results
-              efficiently. Our expertise includes natural language processing,
-              semantic search, and personalized content delivery, ensuring
-              seamless access to critical information.
-            </li>
-            <li>
-              <strong>Data Engineering</strong>: We build scalable, reliable
-              data pipelines and infrastructure to support data-driven
-              operations. From data ingestion and transformation to storage and
-              analytics, our solutions ensure data integrity, accessibility, and
-              performance at scale.
-            </li>
-          </ul>
+        <div class="solutions-container">
+          <div class="solution-card">
+            <div class="solution-icon">ML</div>
+            <h3>Machine Learning</h3>
+            <p>
+              Sophisticated predictive models and intelligent systems tailored
+              to specific business needs. Our solutions enable accurate
+              forecasting, anomaly detection, and automated decision-making
+              using cutting-edge algorithms.
+            </p>
+          </div>
+
+          <div class="solution-card">
+            <div class="solution-icon">IR</div>
+            <h3>Information Retrieval</h3>
+            <p>
+              High-performance search and recommendation systems that deliver
+              relevant results efficiently. Expertise in natural language
+              processing, semantic search, and personalized content delivery.
+            </p>
+          </div>
+
+          <div class="solution-card">
+            <div class="solution-icon">DE</div>
+            <h3>Data Engineering</h3>
+            <p>
+              Scalable, reliable data pipelines and infrastructure supporting
+              data-driven operations. From ingestion and transformation to
+              storage and analytics, ensuring data integrity at scale.
+            </p>
+          </div>
         </div>
-      </section>
+      </div>
     </main>
 
     <!-- Footer -->
